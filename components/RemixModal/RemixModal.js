@@ -75,11 +75,8 @@ const RemixModal = props => {
   //         const [variableName, updateFunction] = useState(false)
   //       }
   //       updateState() {
-  //         !
   //       }
   //   }
-
-  console.log(active);
 
   return (
     <div className={"modal " + (props.display ? "playlists" : "none")}>
@@ -126,11 +123,18 @@ const RemixModal = props => {
           onClick={() => {
             props.updateDisplay();
             props.filterList();
+            props.playPause();
           }}
         >
           Remix
         </div>
-        <div className="modal-buttons" onClick={() => props.updateDisplay()}>
+        <div
+          className="modal-buttons"
+          onClick={() => {
+            props.updateDisplay();
+            props.playPause();
+          }}
+        >
           Roll The Dice
         </div>
       </div>
@@ -143,7 +147,7 @@ const RemixModal = props => {
           left: 0;
           height: 100%;
           width: 100%;
-          z-index: 1;
+          z-index: 2;
           overflow: auto;
         }
         .playlists {

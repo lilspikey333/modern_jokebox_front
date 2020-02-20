@@ -4,18 +4,26 @@ function Buttons(props) {
   return (
     <div className="buttons">
       <ul>
-        <li className={"show " + (props.currentSong ? "" : "fade")} onClick={() => props.prevSong()}>Previous</li>
-        <li>Play/Pause</li>
+        <li
+          className={"show " + (props.currentSong ? "" : "fade")}
+          onClick={() => props.prevSong()}
+        >
+          Previous
+        </li>
+        <li onClick={props.playPause}>Play/Pause</li>
         <li onClick={() => props.advanceSong()}>Skip</li>
       </ul>
       <style jsx>{`
-      .buttons {
-        margin-top: 43%;
-        margin-left: 42.5%;
-      }
+        .buttons {
+          position: fixed;
+          bottom: 5%;
+          width: 100%;
+          text-align: center;
+        }
         ul {
           list-style-type: none;
           overflow: hidden;
+          display: inline-block;
         }
         li {
           float: left;
